@@ -3,14 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Работа за границей</title>
-
+    
     <!-- ========== Start SEO ========== -->
-    
+    <title>Работа за границей</title>
+    <meta name="description" content="Работа за границей - вакансии в Англии и Европе. Без знания языка, бесплатное проживание, зарплата от 3500 Евро.">
+    <meta name="keywords" content="работа за границей, вакансии в Европе, работа в Англии, без знания языка, бесплатное проживание, высокая зарплата">
+    <meta name="author" content="Work Abroad">
+    <meta property="og:title" content="Работа за границей">
+    <meta property="og:description" content="Вакансии в Англии и Европе. Без знания языка, бесплатное проживание, зарплата от 3500 Евро.">
+    <meta property="og:image" content="img/preview.png">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta name="twitter:card" content="summary_large_image">
     <!-- ========== End SEO ========== -->
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <link rel="stylesheet" href="CSS/style.min.css">
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '626397376757179');
+        fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=626397376757179&ev=PageView&noscript=1"
+        /></noscript>
+        <!-- End Meta Pixel Code -->
 </head>
 <body>
     <div class="wrapper">
@@ -24,25 +49,31 @@
                     <div class="swiper-slide" style="background-image: url('img/3.png');"></div>
                     <div class="swiper-slide" style="background-image: url('img/4.png');"></div>
                 </div>
-                <div class="swiper-pagination">Мы подобрали для наших клиентов лучшие условия на рынке!</div>
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
 
-        <div class="important-text"><p>Мы подобрали для наших клиентов лучшие условия на рынке!</p></div>
+        <div class="important-text">
+            <p>АКТУАЛЬНЫЕ ВАКАНСИИ | АКТУАЛЬНЫЕ ВАКАНСИИ | АКТУАЛЬНЫЕ ВАКАНСИИ | АКТУАЛЬНЫЕ ВАКАНСИИ | АКТУАЛЬНЫЕ ВАКАНСИИ | АКТУАЛЬНЫЕ ВАКАНСИИ | АКТУАЛЬНЫЕ ВАКАНСИИ | АКТУАЛЬНЫЕ ВАКАНСИИ</p>
+        </div>
 
         <div class="container">
             <ul class="conditions-list">
                 <li>Без знания языка</li>
                 <li>М/Ж 18-60 лет</li>
                 <li>Бесплатное проживание</li>
+                <li>З/П от 3500 Евро</li>
             </ul>
     
             <div class="links">
-                <a href="https://t.me/hr_islamm" target="_blank" class="link telegram-link">
+                <a href="https://t.me/hr_islamm" target="_blank" class="link telegram-link" onclick="trackButtonClick('Telegram')">
                     <img src="img/telegram-24.png" alt="" class="link-icon">
                     <div class="link-text">Telegram</div>
                 </a>
-                <a href="https://wa.me/447404836547" target="_blank" class="link whatsapp-link">
+                <a href="https://wa.me/447404836547" target="_blank" class="link whatsapp-link" onclick="trackButtonClick('Whatsapp')">
                     <img src="img/whatsapp-24.png" alt="" class="link-icon">
                     <div class="link-text">Whatsapp</div>
                 </a>
@@ -56,7 +87,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
-            direction: 'horizontal', // 'vertical' або 'horizontal'
+            direction: 'horizontal',
             loop: true,
             slidesPerView: 1,
             spaceBetween: 30,
@@ -69,8 +100,20 @@
                     slidesPerView: 2,
                 },
             },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
         });
     </script>
+    <script>
+        // Функція для відслідковування натискання кнопок
+        function trackButtonClick(buttonName) {
+            fbq('track', 'ButtonClick', {
+                button_name: buttonName
+            });
+        }
+      </script>
     <script type="module" src="JS/script.js"></script>
 </body>
 </html>
